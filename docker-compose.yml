@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  app:
+    image: ${PROJECT_NAME}:${IMAGE_VERSION}
+    build:
+      context: .
+      args:
+        UID: ${UID}
+        GID: ${GID}
+        USERNAME: ${USERNAME}
+        GROUPNAME: ${GROUPNAME}
+        WORKDIR: ${WORKDIR}
+        NODE_IMAGE_TAG: ${NODE_IMAGE_TAG}
+    ports:
+      - ${APP_PORT}:3000
+    tty: true
+    volumes:
+      - .:${WORKDIR}
