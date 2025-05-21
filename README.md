@@ -10,5 +10,5 @@ npm install typescript ts-node
 npx tsc --init
 
 # execute tsfile
-./node_modules/.bin/ts-node test.ts
+npx ts-node test.ts
 ```
