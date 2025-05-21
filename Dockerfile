@@ -10,7 +10,6 @@ ARG GROUPNAME
 ARG UID
 ARG GID
 ARG WORKDIR
-ARG TIMEZONE
 
 # ユーザー情報変更
 RUN groupmod -g $GID node
@@ -27,6 +26,3 @@ USER $USERNAME
 
 # 作業ディレクトリ変更
 WORKDIR $WORKDIR
-
-# 情報として
-EXPOSE 3000

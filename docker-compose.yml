@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   app:
     image: ${PROJECT_NAME}:${IMAGE_VERSION}
@@ -12,8 +10,8 @@ services:
         GROUPNAME: ${GROUPNAME}
         WORKDIR: ${WORKDIR}
         NODE_IMAGE_TAG: ${NODE_IMAGE_TAG}
-    ports:
-      - ${APP_PORT}:3000
     tty: true
+    environment:
+        - TZ:${TIMEZONE}
     volumes:
       - .:${WORKDIR}
